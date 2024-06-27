@@ -17,7 +17,7 @@ class linklist {
         } catch (Exception e) {
             System.out.println("There is no history,please perform some calculations and try again!"); 
         }
-    }
+    } 
 }
 
 abstract class Calculator {
