@@ -5,7 +5,7 @@ class linklist {
     static LinkedList<Double> linklist = new LinkedList<Double>();
 
     void addhistory(double ans) {
-        linklist.addFirst(ans);
+        linklist.addFirst(ans); 
     }
 
     void showhistory() {
