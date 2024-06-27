@@ -5,7 +5,7 @@ class linklist {
     static LinkedList<Double> linklist = new LinkedList<Double>();
 
     void addhistory(double ans) {
-        linklist.addFirst(ans); 
+        linklist.addFirst(ans);  
     }
 
     void showhistory() {
@@ -15,9 +15,9 @@ class linklist {
             double c = linklist.get(2);
             System.out.println("Last Calculations : " + a + ", " + b + ", " + c);
         } catch (Exception e) {
-            System.out.println("There is no history, please perform some calculations and try again!");
+            System.out.println("There is no history,please perform some calculations and try again!"); 
         }
-    }
+    }   
 }
 
 abstract class Calculator {
