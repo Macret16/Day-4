@@ -166,59 +166,65 @@ class perform implements Operation {
         perform obj = new perform();
         System.out.print(
                 "\n=== Calculator Menu ===\nOperations : \n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Modulus\n6. Square Root\n7. Power\n\nOther Operations :\n8. View Calculation History\n9. Restart\n10. Exit Program\n\nEnter Your Choice : ");
-        int ch = input.nextInt();
-        switch (ch) {
-            case 1:
-                Addition add = new Addition();
-                add.calculate(a, b);
-                obj.performOperation(a, b);
-                break;
-            case 2:
-                Subtraction sub = new Subtraction();
-                sub.calculate(a, b);
-                obj.performOperation(a, b);
-                break;
-            case 3:
-                Multiplication mul = new Multiplication();
-                mul.calculate(a, b);
-                obj.performOperation(a, b);
-                break;
-            case 4:
-                Division div = new Division();
-                div.calculate(a, b);
-                obj.performOperation(a, b);
-                break;
-            case 5:
-                Modulus mod = new Modulus();
-                mod.calculate(a, b);
-                obj.performOperation(a, b);
-                break;
-            case 6:
-                SquareRoot sq = new SquareRoot();
-                sq.calculate(a, b);
-                obj.performOperation(a, b);
-                break;
-            case 7:
-                Power pow = new Power();
-                pow.calculate(a, b);
-                obj.performOperation(a, b);
-                break;
-            case 8:
-                linklist link = new linklist();
-                link.showhistory();
-                obj.performOperation(a, b);
-                break;
-            case 9:
-                System.out.println("Restarting...");
-                mainn.main(null);
-                break;
-            case 10:
-                advcalc ob = new advcalc();
-                System.out.println("Exiting...");
-                break;
-            default:
-                System.out.println("Invalid Choice!");
-                break;
+        
+        try{
+            int ch = input.nextInt();
+            switch (ch) {
+                case 1:
+                    Addition add = new Addition();
+                    add.calculate(a, b);
+                    obj.performOperation(a, b);
+                    break;
+                case 2:
+                    Subtraction sub = new Subtraction();
+                    sub.calculate(a, b);
+                    obj.performOperation(a, b);
+                    break;
+                case 3:
+                    Multiplication mul = new Multiplication();
+                    mul.calculate(a, b);
+                    obj.performOperation(a, b);
+                    break;
+                case 4:
+                    Division div = new Division();
+                    div.calculate(a, b);
+                    obj.performOperation(a, b);
+                    break;
+                case 5:
+                    Modulus mod = new Modulus();
+                    mod.calculate(a, b);
+                    obj.performOperation(a, b);
+                    break;
+                case 6:
+                    SquareRoot sq = new SquareRoot();
+                    sq.calculate(a, b);
+                    obj.performOperation(a, b);
+                    break;
+                case 7:
+                    Power pow = new Power();
+                    pow.calculate(a, b);
+                    obj.performOperation(a, b);
+                    break;
+                case 8:
+                    linklist link = new linklist();
+                    link.showhistory();
+                    obj.performOperation(a, b);
+                    break;
+                case 9:
+                    System.out.println("Restarting...");
+                    mainn.main(null);
+                    break;
+                case 10:
+                    advcalc ob = new advcalc();
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid Choice!");
+                    break;
+            }
+        }catch(Exception e){
+            System.out.println("Invalid Type. Try again!");
+            obj.performOperation(a, b);
         }
     }
 }
@@ -228,10 +234,15 @@ public class advcalc {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to the calculator!");
         System.out.print("Enter First Number : ");
-        double a = input.nextDouble();
-        System.out.print("Enter Second Number : ");
-        double b = input.nextDouble();
-        perform obj = new perform();
-        obj.performOperation(a, b);
+        try {
+            double a = input.nextDouble();
+            System.out.print("Enter Second Number : ");
+            double b = input.nextDouble();
+            perform obj = new perform();
+            obj.performOperation(a, b);
+        } catch (Exception e) {
+            System.out.println("Invalid Type. Try again!");
+            main(null);
+        }
     }
 }
